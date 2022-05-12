@@ -22,4 +22,4 @@ To run the (failing) test:
 $ py.test
 ```
 
-**After implementing your solution, it should pass the unit tests available.** 
+**After implementing your solution, it should pass the unit tests available.** # solving-hotel-reservation-challenge
