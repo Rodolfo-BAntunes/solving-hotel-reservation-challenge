@@ -1,6 +1,6 @@
 # Teste Técnico - Programa de Estágio Syngenta Digital
 
-**This repository contains an attempt to solve the Hotel Reservation Challenge for Syngenta Digital Intern Program application.
+**This repository contains an attempt to solve the Hotel Reservation Challenge for Syngenta Digital Intern Program application.**
 
 I did use Python 3 to complete the task. 
 
