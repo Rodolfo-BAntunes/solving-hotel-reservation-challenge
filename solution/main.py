@@ -7,20 +7,90 @@ Original file is located at
     https://colab.research.google.com/drive/1h60d24w3_qS-hBLhAEx2XD2aXRD9Vst-
 """
 
-import datetime
-import dateutil
+from datetime import datetime
 import re
+import json
 
 def getData():
-  entryData = input("Insira a (categoria do hospede): (datas no formato DDMMAAAA(dia da semana abreveada) que ele irá se hospedar separadas por vírgula)")
+
+  # Main function flow:
+  # Ask the user for data;
+  # Process to split the category and dates into two different variables;
+  # Process date and category variables to check the cost for each date -> bill list variable;
+  # Summatory of bills 
+  
+  print("Digite a categoria do hospede e as datas que ele irá se hospedar")
+  entryData = input("Formato: Categoria: ddmmmaaaa(ddd), ddmmmaaaa(ddd), ddmmmaaaa(ddd),...") #expected format: DayMonthYear(Weekday)
+  
+  ###### Regular Expressions ######
+
   RE_dates = '\d{2}\D{3}\d{4}\(\D*\)'
   RE_category = '\D*:'
+  
+  #################################
+  
   category = re.findall(RE_category,entryData)[0][0:-1]
   dates = re.findall(RE_dates,entryData)
-  print(category,"\n",dates)
+  
+  #rint(category,"\n",dates)
+
+  bills = []
+  for date in dates:
+    weekday = pickWeekday(date)
+    if weekday in days:           # Test for weekend
+      bills.append(prices_by_hotel weekday)
+    
+  
+  print( bills)
+
+
+def pickWeekday(date):
+  #function to extract weekday of a given date on expected format
+  
+  RE = "\(.*?\)"  #regex to search anything inside parentesis
+  result = re.findall(RE,date) 
+  
+  return(result[0][1:-1].upper()) #return weekday uppercased
+
+days =  ['SUN','SAT']     #weekend days
+
 
 prices_by_hotel = {
-    {}
+    'lakewood':{
+    'weekend' :{
+               'regular':90,
+               'reward':80
+               },
+     'weekday' :{
+               'regular':110,
+               'reward':80
+               }
+     },
+     'bridgewood':{
+     'weekend' :{
+               'regular':60,
+               'reward':50
+               },
+     'weekday' :{
+               'regular':160,
+               'reward':110
+               }
+     },
+     'ridgewood':{
+     'weekend' :{
+               'regular':220,
+               'reward':110
+               },
+     'weekday' :{
+               'regular':150,
+               'reward':40
+               }
+     }
 }
+#getData()
+
+print(prices_by_hotel['bridgewood']['weekday']['regular'])
+#datetime.strptime('20Mar2021','%d%m%y(')
+
 getData()
 
