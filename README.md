@@ -1,26 +1,7 @@
-Nearly empty Python3 project with a failing test!
-===
+# Teste Técnico - Programa de Estágio Syngenta Digital
 
-**DO NOT change the names of the function (get_cheapest_hotel) or of the file and folder it is in, changing it implies in disqualification.** 
+**This repository contains an attempt to solve the Hotel Reservation Challenge for Syngenta Digital Intern Program application.**
 
-**Ensure that you have Python 3 installed and that your PIP installation points to it**
+I did use Python 3 to complete the task. 
 
-To install the required modules:
-
-```
-$ pip install -r requirements.txt
-```
-or
-```
-$ pip3 install -r requirements.txt
-```
-
-
-To run the (failing) test:
-
-```
-$ py.test
-```
-
-**After implementing your solution, it should pass the unit tests available.** # solving-hotel-reservation-challenge
-# solving-hotel-reservation-challenge
+Como parte do desafio clonei o [repositorio](https://github.com/syngenta-digital/challenge-hotel-reservation-test) indicado pela Syngenta para realizar os testes na minha solucao.
