@@ -1,3 +1,7 @@
+
+import re
+import numpy as np
+
 def get_cheapest_hotel(number):   #DO NOT change the function's name
     cheapest_hotel = "cheapest_hotel_name"
     
@@ -101,7 +105,7 @@ def get_cheapest_hotel(number):   #DO NOT change the function's name
    }
     cheaper_bill = np.min(list(total.values()))
     hotel_index = list(total.values()).index(cheaper_bill)
-    cheapest_hotel = hotels[hotel_index])
+    cheapest_hotel = hotels[hotel_index]
 
         
     
