@@ -14,31 +14,31 @@ def get_cheapest_hotel(data):   #DO NOT change the function's name
         'lakewood':{
         'weekend' :{
                    'regular':90,
-                   'reward':80
+                   'rewards':80
                    },
          'weekday' :{
                    'regular':110,
-                   'reward':80
+                   'rewards':80
                    }
          },
          'bridgewood':{
          'weekend' :{
                    'regular':60,
-                   'reward':50
+                   'rewards':50
                    },
          'weekday' :{
                    'regular':160,
-                   'reward':110
+                   'rewards':110
                    }
          },
          'ridgewood':{
          'weekend' :{
                    'regular':220,
-                   'reward':110
+                   'rewards':110
                    },
          'weekday' :{
                    'regular':150,
-                   'reward':40
+                   'rewards':40
                    }
          }
     }
