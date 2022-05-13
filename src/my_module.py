@@ -2,7 +2,7 @@
 import re
 import numpy as np
 
-def get_cheapest_hotel(number):   #DO NOT change the function's name
+def get_cheapest_hotel(data):   #DO NOT change the function's name
     cheapest_hotel = "cheapest_hotel_name"
     
 
@@ -60,10 +60,10 @@ def get_cheapest_hotel(number):   #DO NOT change the function's name
     # Process to split the category and dates into two different variables;
     # Process date and category variables to check the cost for each date -> bill list variable;
     # Summatory of bills 
-
-    print("Digite a categoria do hospede e as datas que ele irá se hospedar")
-    entryData = input("Formato: Categoria: ddmmmaaaa(ddd), ddmmmaaaa(ddd), ddmmmaaaa(ddd),...") #expected format: DayMonthYear(Weekday)
-
+    
+    ##print("Digite a categoria do hospede e as datas que ele irá se hospedar")
+    ##entryData = input("Formato: Categoria: ddmmmaaaa(ddd), ddmmmaaaa(ddd), ddmmmaaaa(ddd),...") #expected format: DayMonthYear(Weekday)
+    entryData = data
     ###### Regular Expressions ######
 
     RE_dates = '\d{2}\D{3}\d{4}\(\D*\)'
