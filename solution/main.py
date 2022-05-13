@@ -9,7 +9,7 @@ Original file is located at
 
 from datetime import datetime
 import re
-import json
+import numpy as np
 
 def getData():
 
@@ -34,14 +34,29 @@ def getData():
   
   #rint(category,"\n",dates)
 
-  bills = []
+  bills = {
+  'lakewood' : [],
+  'bridgewood' : [],
+  'ridgewood' : [],
+  }
   for date in dates:
     weekday = pickWeekday(date)
     if weekday in days:           # Test for weekend
-      bills.append(prices_by_hotel weekday)
+      bills['bridgewood'].append(prices_by_hotel.get('bridgewood').get('weekend').get(category.lower()))
+      bills['lakewood'].append(prices_by_hotel.get('lakewood').get('weekend').get(category.lower()))
+      bills['ridgewood'].append(prices_by_hotel.get('ridgewood').get('weekend').get(category.lower()))
     
-  
-  print( bills)
+    else:
+      bills['bridgewood'].append(prices_by_hotel.get('bridgewood').get('weekday').get(category.lower()))
+      bills['lakewood'].append(prices_by_hotel.get('lakewood').get('weekday').get(category.lower()))
+      bills['ridgewood'].append(prices_by_hotel.get('ridgewood').get('weekday').get(category.lower()))
+  total = {
+  'lakewood' : np.sum(bills.get('lakewood')),
+  'bridgewood' : np.sum(bills.get('bridgewood')),
+  'ridgewood' : np.sum(bills.get('ridgewood')),
+  }
+  print(total)
+  return(bills)
 
 
 def pickWeekday(date):
@@ -87,10 +102,11 @@ prices_by_hotel = {
                }
      }
 }
-#getData()
+a = getData()
 
 print(prices_by_hotel['bridgewood']['weekday']['regular'])
 #datetime.strptime('20Mar2021','%d%m%y(')
 
-getData()
+bridgewoodgetData()
 
+prices_by_hotel.get('bridgewood').get('weekday').get('reward')
