@@ -1,7 +1,3 @@
-import re
-import numpy as np
-
-
 def get_cheapest_hotel(number):   #DO NOT change the function's name
     cheapest_hotel = "cheapest_hotel_name"
     
